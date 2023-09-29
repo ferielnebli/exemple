@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of listcategorie;let index=index">
+        <th scope="row">{{index+1}}</th>
+        <td>{{c.title}}</td>
+        <td>{{c.description}}</td>
+        <td><button type="button" class="btn btn-danger"  (click)="deleteCat(c.id)">Delete</button>
+          &nbsp;
+          <button type="button" class="btn btn-info" [routerLink]="['/detailcat',c.id]">Détails</button>
+          &nbsp;
+          <button type="button" class="btn btn-success"  [routerLink]="['/updatecat',c.id]">Update</button>
+      </tr>
+    </tbody>
+  </table>
